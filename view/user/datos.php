@@ -1,0 +1,1 @@
+<h1><?php echo "hola ".$user->getNombres(); ?></h1>
