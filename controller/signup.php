@@ -23,13 +23,31 @@ class Signup extends SessionController{
             }
             $user = new CuentaModel();
             $user->setUsername($username);
+            $datos = new CustomerModel();
             $user->setPassword($password);
             $user->setRole("2");
+            $user->setUsuario($_POST["dni"]);
 
             if($user->exists($username)){
                 $this->redirect("signup",["error"=> ErrorMessage::ERROR_SIGNUP_NEWUSER_EXISTS]);
-            }else if($user->save()){
-                $this->redirect("",["success"=> SuccessMessage::SUCCESS_SIGNUP_NEWUSER]);
+            }else if(!$this->existPOST(["dni"])){
+                $this->redirect("signup",["error"=> ErrorMessage::ERROR_SIGNUP_NEWUSER]);
+            }else if($datos->exists($_POST["dni"])){
+                $this->redirect("signup",["error"=> ErrorMessage::ERROR_SIGNUP_NEWUSER_EXISTS]);
+            }
+            else if($user->save()){
+                $datos->from(array(
+                    "id"=>$_POST["dni"],
+                    "nombres"=>$_POST["name"],
+                    "apellido_p"=>$_POST["apellido_p"],
+                    "apellido_m"=>$_POST["apellido_m"],
+                    "correo"=>$_POST["correo"],
+                    "fecha_nacimiento"=>$_POST["fecha_nacimiento"]));
+                if($datos->save()){
+                    $this->redirect("",["success"=> SuccessMessage::SUCCESS_SIGNUP_NEWUSER]);
+                }else{
+                    $this->redirect("",["error"=> ErrorMessage::ERROR_LOGIN_AUTHENTICATE]);
+                }
             }else{
                 $this->redirect("signup",["error"=> ErrorMessage::ERROR_SIGNUP_NEWUSER]);
             }

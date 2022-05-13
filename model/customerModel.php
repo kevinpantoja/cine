@@ -51,10 +51,12 @@ class CustomerModel extends Model implements IModel{
                 $item->setApellido_p($row["apellido_p"]);
                 $item->setCorreo($row["correo"]);
                 $item->setFechaNacimiento($row["fecha_nacimiento"]);
+                array_push($items,$item);
             }
+            return $items;
         }catch(PDOException $e){
-            error_log("CUSTOMERMODEL::getAll->PDOException ".$e);
-            
+            error_log("AdminModel::getAll->PDOException ".$e);
+            return null;
         }
     }
 

@@ -14,7 +14,14 @@
                 }
             }else{
         ?>
-            <li><?php echo get_class($opcion); ?></li>
+            <li> 
+                <span><?php echo $opcion->titulo; ?></span> 
+                <ul>
+                <?php foreach($opcion->elementos as $elemento){?>
+                    <li><a href="user/barraRedirect/<?php echo $elemento->link; ?>"><?php echo $elemento->titulo; ?></a></li>
+                <?php }?>
+                </ul>
+            </li>
         <?php
             }
         }

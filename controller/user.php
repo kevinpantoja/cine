@@ -1,5 +1,7 @@
 <?php 
 
+require_once "model/peliculaModel.php";
+require_once "model/customerModel.php";
 class User extends SessionController{
     private $user;
     private $cuenta;
@@ -15,10 +17,16 @@ class User extends SessionController{
 
     function render(){
         $session = new Session();
-        $this->view->render("user/index",[
+        $peliculas = new PeliculaModel();
+        $arreglo = [
             "user"=>$this->user,
             "actual"=>$session->getCurrentPage()
-        ]);
+        ];
+        switch($session->getCurrentPage()){
+            case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
+                break;
+        } 
+        $this->view->render("user/index",$arreglo);
     }
 
     function userCloseSession(){
@@ -32,6 +40,26 @@ class User extends SessionController{
         error_log("User::barraRedirect -> direccion_destino: ".$actual[0]);
         $session->setCurrentPage($actual[0]);
         $this->redirect("user",[]); //TODO: 
+    }
+
+    function updateUserData(){
+        try{
+            error_log("User::updateUserData -> iniciando proceso de actualización");
+            $clienteModel = new CustomerModel();
+            $clienteModel->from(array(
+                "id"=>$_POST["dni"],
+                "nombres"=>$_POST["name"],
+                "apellido_p"=>$_POST["apellido_p"],
+                "apellido_m"=>$_POST["apellido_m"],
+                "correo"=>$_POST["correo"],
+                "fecha_nacimiento"=>$_POST["fecha_nacimiento"]
+            ));   
+            $clienteModel->update();
+            $this->redirect("user",["success"=> SuccessMessage::SUCCESS_UPDATE_USER]);         
+        }catch(PDOException $e){
+            error_log("User::updateUserData -> error en procesamiento de datos ".$e->getMessage());
+            $this->redirect("user",["error"=> ErrorMessage::ERROR_LOGIN_AUTHENTICATE]);
+        }
     }
  
 }

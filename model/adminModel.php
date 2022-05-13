@@ -59,10 +59,12 @@ class AdminModel extends Model implements IModel{
                 $item->setCelular($row["celular"]);
                 $item->setCorreo($row["correo"]);
                 $item->setFechaNacimiento($row["fecha_nacimiento"]);
+                array_push($items,$item);
             }
+            return $items;
         }catch(PDOException $e){
             error_log("AdminModel::getAll->PDOException ".$e);
-            
+            return null;
         }
     }
 
@@ -127,7 +129,7 @@ class AdminModel extends Model implements IModel{
         $this->fecha_nacimineto = $array["fecha_nacimiento"];
         $this->id = $array["id"];
         $this->direccion = $array["direccion"];
-        $this->salario = $array["correo"];
+        $this->correo = $array["correo"];
         $this->celular = $array["celular"];
     }
 

@@ -12,17 +12,20 @@
 </head>
 <body>
     <?php $opciones = array(
-        new BarraGrupo("Peliculas",array(new BarraElemento("cartelera",""),new BarraElemento("estrenos",""))),
+        new BarraGrupo("Peliculas",array(new BarraElemento("cartelera","peliculas"))),
         new BarraElemento("Dulceria","dulceria"),
         new BarraElemento("Datos","datos"),
         new BarraElemento("Salir",""))
     ; ?>
+    <?php $this->showMessages(); ?>
     <?php include "barra.php";?>
     <?php switch($this->d["actual"]){
         case "datos": include_once "datos.php";
             break;
         case "dulceria": include_once "dulceria.php";
             break;
+        case "peliculas": include_once "peliculas.php";
+            break;            
         default: include_once "datos.php";
             break;
     } 

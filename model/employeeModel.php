@@ -59,10 +59,12 @@ class EmployeeModel extends Model implements IModel{
                 $item->setCelular($row["celular"]);
                 $item->setSalario($row["salario"]);
                 $item->setFechaNacimiento($row["fecha_nacimiento"]);
+                array_push($items,$item);
             }
+            return $items;
         }catch(PDOException $e){
-            error_log("EMPLOYEEMODEL::getAll->PDOException ".$e);
-            
+            error_log("AdminModel::getAll->PDOException ".$e);
+            return null;
         }
     }
 

@@ -9,6 +9,7 @@ class ErrorMessage{
     const ERROR_LOGIN_AUTHENTICATE_EMPTY = "V8bn567dm2Vt3rTAB4T2f26494fbMB5S";
     const ERROR_LOGIN_AUTHENTICATE_DATA = "V8bn567dm2Vt3rTAB4T2f26494fb4321";
     const ERROR_LOGIN_AUTHENTICATE = "1234567dm2Vt3rTAB4T2f26494fb4321";
+    const ERROR_MOVIE_EXISTS = "7654321dm2Vt3rTAB4T2f26494fb4321";
     //nueva categoria existe
 
     private $errorList = [];
@@ -23,6 +24,7 @@ class ErrorMessage{
             ErrorMessage::ERROR_LOGIN_AUTHENTICATE_EMPTY => "Alguno de los campos está vacio",
             ErrorMessage::ERROR_LOGIN_AUTHENTICATE_DATA => "Contraseña o cuenta incorrecta",
             ErrorMessage::ERROR_LOGIN_AUTHENTICATE => "Error en el procesamiento de datos",
+            ErrorMessage::ERROR_MOVIE_EXISTS => "Id de película ya registrado",
         ];
     }
 

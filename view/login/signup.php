@@ -14,11 +14,35 @@
         <h2>Registrarse</h2>
         <p>
             <label for="username">username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" autocomplete="off" id="username">
         </p>
         <p>
             <label for="password">password</label>
-            <input type="text" name="password" id="password">
+            <input type="text" name="password" autocomplete="off" id="password">
+        </p>
+        <p>
+            <label for="name">nombres</label>
+            <input type="text" name="name" autocomplete="off" id="name">
+        </p>
+        <p>
+            <label for="apellido_p">Primer Apellido</label>
+            <input type="text" name="apellido_p" autocomplete="off" id="apellido_p">
+        </p>
+        <p>
+            <label for="apellido_m">Segundo Apellido</label>
+            <input type="text" name="apellido_m" autocomplete="off" id="apellido_m">
+        </p>
+        <p>
+            <label for="correo">correo</label>
+            <input type="text" name="correo" autocomplete="off" id="correo">
+        </p>
+        <p>
+            <label for="fecha_nacimiento">fecha de nacimineto</label>
+            <input type="date" name="fecha_nacimiento" autocomplete="off" id="fecha_nacimiento">
+        </p>
+        <p>
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" autocomplete="off" id="dni">
         </p>
         <p>
             <input type="submit" value="Crear Cuenta"/>
