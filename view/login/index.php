@@ -26,5 +26,6 @@
             ¿No tienes una cuenta? <a href="<?php echo constant("URL"); ?>signup">Crear Una</a>
         </p>
     </form>
+
 </body>
 </html>
