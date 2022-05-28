@@ -10,10 +10,12 @@ class App{
 
         if(empty($url[0])){
             error_log("APP::construct->no hay controlador especificado");
-            $archivoController = "controller/login.php";
+            $archivoController = "controller/invitado.php";
             require_once $archivoController;
-            $controller = new Login();
-            $controller->loadModel("login");
+            $controller = new Invitado();
+            /* $controller->loadModel("invitado"); */
+            /* $controller = new Login();
+            $controller->loadModel("login"); */
             $controller->render();
             return false;
         }

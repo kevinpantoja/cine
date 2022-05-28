@@ -24,11 +24,16 @@
             "site":"admin",
             "access":"private",
             "role":"admin"
+        },
+        {
+            "site":"invitado",
+            "access":"public",
+            "role":""
         }
     ],
     "default-sites":{
         "user":"user",
         "admin":"admin",
-        "deployee":"deployee"
+        "invitado":"invitado"
     }
 }

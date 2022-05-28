@@ -53,11 +53,13 @@ class SessionController extends Controller{
             //si la página a entrar es pública
             switch($role){
                 case "1": $role = "admin";
-                break;
+                    break;
                 case "2": $role = "user";
-                break;
+                    break;
                 case "3": $role = "employee";
-                break;
+                    break;
+                default: $role = "invitado";
+                    break;
             }
             if($this->getCurrentPage() == NULL){
                 $this->redirectDefaultSiteByRole($role);
