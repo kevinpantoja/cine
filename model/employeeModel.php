@@ -63,7 +63,7 @@ class EmployeeModel extends Model implements IModel{
             }
             return $items;
         }catch(PDOException $e){
-            error_log("AdminModel::getAll->PDOException ".$e);
+            error_log("EMPLOYEEModel::getAll->PDOException ".$e);
             return null;
         }
     }
