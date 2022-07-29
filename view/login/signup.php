@@ -48,7 +48,7 @@
             <input type="submit" value="Crear Cuenta"/>
         </p>
         <p>
-            ¿Tienes una cuenta? <a href="<?php echo constant("URL"); ?>">Iniciar Sesión</a>
+            ¿Tienes una cuenta? <a href="<?php echo constant("URL"); ?>login">Iniciar Sesión</a>
         </p>
     </form>
 </body>
