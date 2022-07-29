@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+:root{
+    --azul_oscuro: #224A98;
+    --azul_claro: #5084E6;
+    --gris_claro: #edf2f4;
+    --gris: #8d99ae;
+    --blanco: #ffffff;
+    --morado: #973fda;
+    --morado_oscuro: #6626e7;
+}
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    display: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris_claro);
+    gap: 2rem;
+}
+.contenedor__general{
+    background-color: var(--azul_oscuro);
+    max-width: 500px;
+    padding: 3rem 1rem;
+    border-radius: 20px;
+    box-shadow: .8rem .8rem .8rem var(--gris);
+}
+.contenedor__general > form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imagen_signup{
+    width: 450px;
+    border-radius: 60px;
+    box-shadow: .4rem .4rem .8rem var(--gris);
+}
+.imagen{
+    color: var(--azul_oscuro);
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    font-size: 4rem;
+}
+.subcontenedor__datos{
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+.subseccion__encabezado{
+    color: var(--blanco);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.subseccion__encabezado > i{
+    margin-right: 1rem;
+}
+.subseccion__inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+
+}
+.subseccion__inputs > input{
+    padding: .8rem 1rem;
+    border-radius: 10px;
+    width: 45%;
+}
+.boton{
+    color: var(--blanco);
+    background-color: var(--morado);
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
