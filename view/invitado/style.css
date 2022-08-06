@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+:root{
+    --azul_oscuro: #224A98;
+    --azul_claro: #5084E6;
+    --gris_claro: #edf2f4;
+    --gris: #8d99ae;
+    --blanco: #ffffff;
+    --morado: #973fda;
+    --morado_oscuro: #6626e7;
+    --gris_claro_transparente: #8d99aebb;
+}
+
+/*PELICULA*/
+.cabecera_pelicula{
+    background-color: var(--azul_claro);
+    display: grid;
+    grid-template-columns: 350px 1fr 1fr;
+    text-align: center;
+    color: var(--blanco);
+    font-family: 'Inter', sans-serif;
+}
+.cabecera_pelicula div{
+    color: var(--blanco);
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+}
+.cabecera_pelicula span{
+    color: var(--blanco);
+}
+.pelicula_fondo{
+    font-size: 2rem;
+}
+.pelicula_fondo{
+    background-color: var(--azul_oscuro);
+}
+.fixed{
+    position: fixed;
+    box-shadow: .2rem .2rem .6rem var(--gris);
+    z-index: 10;
+}
+.link_primero::after{
+    content: "_";
+    position: absolute;
+    color: var(--azul_claro);
+    right: 0;
+    line-height: 2rem;
+    border-right: 4px var(--azul_oscuro) solid;
+}
+.pelicula_link_activo span{
+    padding: .4rem 0;
+    border-bottom: 4px var(--azul_oscuro) solid;
+}
+.contenedor_peliculas{
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.pelicula_individual{
+    width: 250px;;
+}
+.pelicula_individual .pelicula_imagen{
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px var(--azul_claro);
+    width: 250px;
+    height: 320px;
+}
+.pelicula_individual .pelicula_imagen_estreno{
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px var(--morado_oscuro);
+    width: 250px;
+    height: 320px;
+}
+.pelicula_individual > .pelicula_titulo{
+    font-family: 'Inter', sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.contenedor_imagen{
+    position: relative;
+    cursor: pointer;
+}
+.circulo_mas{
+    position: absolute;
+    left: calc(50% - 2.5rem);
+    top: calc(50% - 2.5rem);
+    font-size: 5rem;
+    color: var(--gris_claro_transparente);
+}
+.cinta_estreno{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: .5rem 1rem;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: var(--morado);
+    color: var(--blanco);
+}

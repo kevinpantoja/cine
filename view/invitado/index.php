@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modo Invitado</title>
+    <link rel="stylesheet" href="<?php echo constant("URL")."view/invitado/style.css"?>">
+    <link rel="stylesheet" href="<?php echo constant("URL")."view/invitado/footer_header.css"?>">
 </head>
 <body>
     <?php $opciones = array(
@@ -29,5 +31,6 @@
     ?>
 
     <?php include "footer.php"; ?>
+    <script src="https://kit.fontawesome.com/9e7e6d804a.js" crossorigin="anonymous"></script>
 </body>
 </html>
