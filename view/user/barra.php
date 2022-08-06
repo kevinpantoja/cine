@@ -1,31 +1,10 @@
-<nav>
-    <ul>
-        <?php 
-        foreach($opciones as $opcion){
-            if(get_class($opcion) == "BarraElemento"){
-                if($opcion->titulo == "Salir"){
-        ?>
-            <li><a href="user/userCloseSession"><?php echo $opcion->titulo; ?></a></li>
-        <?php 
-                }else{
-        ?>
-            <li><a href="user/barraRedirect/<?php echo $opcion->link; ?>"><?php echo $opcion->titulo; ?></a></li>
-        <?php
-                }
-            }else{
-        ?>
-            <li> 
-                <span><?php echo $opcion->titulo; ?></span> 
-                <ul>
-                <?php foreach($opcion->elementos as $elemento){?>
-                    <li><a href="user/barraRedirect/<?php echo $elemento->link; ?>"><?php echo $elemento->titulo; ?></a></li>
-                <?php }?>
-                </ul>
-            </li>
-        <?php
-            }
-        }
-        
-        ?>        
-    </ul>
+<nav class="cabecera">
+    
+    <a href="user/barraRedirect/principal"><img src="<?php echo constant("URL")."public/img/logo.png"?>" alt="Logo" class="logo_cabecera"></a>
+    <div class="barra_central">
+        <a href="user/barraRedirect/peliculas"><span>PELICULAS</span></a>
+        <a href="user/barraRedirect/dulceria"><span>DULCERIA</span></a>
+        <a href="user/barraRedirect/datos"><span>CUENTA</span></a>
+    </div>
+    <a href="user/userCloseSession"><i class="fa-solid fa-door-open login_cabecera"></i></a>
 </nav>
