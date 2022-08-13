@@ -49,16 +49,20 @@
             cambiar_pelicula(i_pelicula-3,i_pelicula-2,i_pelicula-1,i_pelicula);
             if(i_pelicula != i_pelicula_tope){
                 cambiar_pelicula(i_pelicula-2,i_pelicula-1,i_pelicula,i_pelicula+1);
+                i_pelicula = i_pelicula + 1;
             }else{
                 cambiar_pelicula(0,1,2,3);
+                i_pelicula = 3;
             }
         });
         $pelicula_izquierda.addEventListener("click",e=>{
             cambiar_pelicula(i_pelicula-3,i_pelicula-2,i_pelicula-1,i_pelicula);
-            if(i_pelicula != 0){
-                cambiar_pelicula(i_pelicula+2,i_pelicula+1,i_pelicula,i_pelicula-1);
+            if(i_pelicula-3 != 0){
+                cambiar_pelicula(i_pelicula-4,i_pelicula-3,i_pelicula-2,i_pelicula-1);
+                i_pelicula = i_pelicula - 1;
             }else{
-                cambiar_pelicula(0,1,2,3);
+                cambiar_pelicula(i_pelicula_tope-3,i_pelicula_tope-2,i_pelicula_tope-1,i_pelicula_tope);
+                i_pelicula = i_pelicula_tope;
             }
         });
     });
