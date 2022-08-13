@@ -19,8 +19,9 @@
             <?php }else{?>
             <img class="pelicula_imagen" src="public/img/photos/<?php echo $pelicula->getFoto(); ?>">
             <?php }?>
-            <i class="fa-solid fa-circle-plus circulo_mas"></i>
-        </div>
+            <a href="user/barraRedirect/pelicula_detalle/<?php echo $pelicula->getId(); ?>"><i class="fa-solid fa-circle-plus circulo_mas"></i></a>
+        </div>    
+        
         
         <h2 class="pelicula_titulo"><?php echo $pelicula->getNombre() ?></h2>
     </div>

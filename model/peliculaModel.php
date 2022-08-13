@@ -125,7 +125,6 @@ class PeliculaModel extends Model implements IModel{
             $this->setClasificacion($row["clasificacion"]);
             $this->setFoto($row["foto"]);
             $this->setDescripcion($row["descripcion"]);
-            $this->setModo($row["celular"]);
             $this->setLink_trailer($row["link_trailer"]);
             $this->setDirector($row["director"]);
             return $this;

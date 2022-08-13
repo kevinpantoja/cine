@@ -3,6 +3,7 @@
 class Session{
     private $sessionName = "usuario";
     private $currentPage = "actual";
+    private $idPelicula = "id_pelciula";
 
     public function __construct()
     {
@@ -19,6 +20,10 @@ class Session{
         $_SESSION[$this->sessionName] = $user;       
     }
 
+    public function setIdPelicula($idPel){
+        $_SESSION[$this->idPelicula] = $idPel;
+    }
+
     public function setCurrentPage($page){
         $_SESSION[$this->currentPage] = $page;
     }
@@ -29,6 +34,10 @@ class Session{
 
     public function getCurrentUser(){
         return $_SESSION[$this->sessionName];
+    }
+
+    public function getIdPelicula(){
+        return $_SESSION[$this->idPelicula];
     }
 
     public function closeSession(){

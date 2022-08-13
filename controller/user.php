@@ -25,6 +25,10 @@ class User extends SessionController{
         switch($session->getCurrentPage()){
             case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
                 break;
+            case "proximamente": $arreglo["peliculas"] = $peliculas->getAllProximamente();
+                break;
+            case "pelicula_detalle": $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
+                break;
         } 
         $this->view->render("user/index",$arreglo);
     }
@@ -39,6 +43,9 @@ class User extends SessionController{
         $session = new Session();
         error_log("User::barraRedirect -> direccion_destino: ".$actual[0]);
         $session->setCurrentPage($actual[0]);
+        if(isset($actual[1])){
+            $session->setIdPelicula($actual[1]);
+        }
         $this->redirect("user",[]); //TODO: 
     }
 

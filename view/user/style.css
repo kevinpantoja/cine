@@ -10,6 +10,7 @@
     --blanco: #ffffff;
     --morado: #973fda;
     --morado_oscuro: #6626e7;
+    --morado_oscuro_transparente: #6626e7bb;
     --gris_claro_transparente: #8d99aebb;
 }
 
@@ -113,4 +114,32 @@
     font-size: 1.1rem;
     background-color: var(--morado);
     color: var(--blanco);
+}
+
+
+.banner_detalle{
+    position: relative;
+}
+.banner_ListaDetalle{
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    background-color: var(--morado_oscuro_transparente);
+    color: var(--blanco);
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+}
+.banner_ListaDetalle h1{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    max-width: 300px;
+    font-size: 1.8rem;
+}
+.banner_ListaDetalle div{
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 100px 250px;
+    margin-top: 1rem;
+    font-size: 1rem;
 }
