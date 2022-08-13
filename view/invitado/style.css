@@ -11,6 +11,7 @@
     --morado: #973fda;
     --morado_oscuro: #6626e7;
     --gris_claro_transparente: #8d99aebb;
+    --rojo: #e63946;
 }
 
 /*PELICULA*/
@@ -113,4 +114,32 @@
     font-size: 1.1rem;
     background-color: var(--morado);
     color: var(--blanco);
+}
+
+
+
+/*mensaje error*/
+.boton_mensaje{
+    display: flex;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    position: fixed;
+    top: -40px;
+    left: 20px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    z-index: 20;
+    box-shadow: 4px 4px 10px var(--azul_oscuro);
+    transition: 2.5s all;
+}
+
+.boton_trasladar{
+    transform: translate(0,80px);
+}
+
+.boton_desaparecer{
+    transition: .5s all;
+    transform: translate(-600px,80px);
 }

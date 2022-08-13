@@ -13,12 +13,6 @@
     <link rel="stylesheet" href="<?php echo constant("URL")."view/user/footer_header.css"?>">
 </head>
 <body>
-    <?php $opciones = array(
-        new BarraElemento("Inicio","principal"),
-        new BarraGrupo("Peliculas",array(new BarraElemento("cartelera","peliculas"))),
-        new BarraElemento("Dulceria","dulceria"),
-        new BarraElemento("Cuenta",""))
-    ; ?>
     <?php $this->showMessages(); ?>
     <?php include "barra.php";?>
     <?php switch($this->d["actual"]){
@@ -27,6 +21,8 @@
         case "peliculas": include_once "peliculas.php";
             break;            
         case "principal": include_once "principal.php";
+            break;   
+        case "proximamente": include_once "proximamente.php";
             break;   
         case "datos": include_once "datos.php";
             break;              

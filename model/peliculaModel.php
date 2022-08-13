@@ -87,6 +87,32 @@ class PeliculaModel extends Model implements IModel{
         }
     }
 
+    public function getAllProximamente(){
+        $items = [];
+        try{
+            $query = $this->query("SELECT * FROM PELICULA WHERE modo = 'proximamente'");
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                $item = new PeliculaModel();
+                $item->setId($row["id"]);
+                $item->setNombre($row["nombre"]);
+                $item->setDuracion(intval($row["duracion"]));
+                $item->setClasificacion($row["clasificacion"]);
+                $item->setFoto($row["foto"]);
+                $item->setDescripcion($row["descripcion"]);
+                $item->setModo($row["modo"]);
+                $item->setLink_trailer($row["link_trailer"]);
+                $item->setDirector($row["director"]);
+                array_push($items,$item);
+            }
+            return $items;
+        }catch(PDOException $e){
+            error_log("AdminModel::getAll->PDOException ".$e);
+            return null;
+        }
+    }
+
+
+
     public function get($id){
         error_log("PELICULAModel::get -> ".$id);
         try{

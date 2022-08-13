@@ -9,19 +9,15 @@
     <link rel="stylesheet" href="<?php echo constant("URL")."view/invitado/footer_header.css"?>">
 </head>
 <body>
-    <?php $opciones = array(
-        new BarraElemento("Inicio","principal"),
-        new BarraGrupo("Peliculas",array(new BarraElemento("cartelera","peliculas"))),
-        new BarraElemento("Dulceria","dulceria"),
-        new BarraElemento("Iniciar Sesion",""))
-    ; ?>
-    <?php $this->showMessages(); ?>
+    <span class="boton_mensaje"><?php $this->showMessages(); ?></span>
     <?php include "barra.php";?>
     <?php switch($this->d["actual"]){
         case "dulceria": include_once "dulceria.php";
             break;
         case "peliculas": include_once "peliculas.php";
-            break;            
+            break;  
+        case "proximamente": include_once "proximamente.php";
+            break;          
         case "principal": include_once "principal.php";
             break;            
         default: include_once "principal.php";
@@ -32,5 +28,14 @@
 
     <?php include "footer.php"; ?>
     <script src="https://kit.fontawesome.com/9e7e6d804a.js" crossorigin="anonymous"></script>
+    <script>
+        $mensaje = document.querySelector(".boton_mensaje");
+        if($mensaje.innerText != ""){
+            $mensaje.classList.add("boton_trasladar");
+            $mensaje.addEventListener("dblclick",e=>{
+                e.target.classList.add("boton_desaparecer");
+            })    
+        }
+    </script>
 </body>
 </html>

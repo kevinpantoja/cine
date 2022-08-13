@@ -36,6 +36,8 @@ class Invitado extends Controller{
         switch($arreglo["actual"]){
             case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
                 break;
+            case "proximamente": $arreglo["peliculas"] = $peliculas->getAllProximamente();
+                break;
         } 
         $this->view->render("invitado/index",$arreglo);
     }
