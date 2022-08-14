@@ -19,7 +19,9 @@
         case "proximamente": include_once "proximamente.php";
             break;          
         case "principal": include_once "principal.php";
-            break;            
+            break;     
+        case "pelicula_detalle": include_once "pelicula_detalle.php";
+            break;        
         default: include_once "principal.php";
             break;
     } 
