@@ -79,4 +79,53 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.titulo{
+
+    text-align: center;
+    padding-bottom: 30px;
+    padding-right: 50px;
+}
+
+
+.confiteria_individual .confiteria_imagen {
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px var(--azul_claro);
+    width: 200px;
+    height: 200px;
+    
+    
+
+}
+
+.contenedor_confiteria{
+
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-sizing: border-box;
+
+}
+
+
+.confiteria_titulo{
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+
+.confiteria_individual{
+
+    width: 250px;
 }
