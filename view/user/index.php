@@ -11,6 +11,7 @@
     <title>Cine</title>
     <link rel="stylesheet" href="<?php echo constant("URL")."view/user/style.css"?>">
     <link rel="stylesheet" href="<?php echo constant("URL")."view/user/footer_header.css"?>">
+    <!-- <link rel="stylesheet" href="<?php echo constant("URL")."view/user/perfilUsuario.css"?>"> -->
 </head>
 <body>
     <?php $this->showMessages(); ?>

@@ -2,6 +2,8 @@
 
 require_once "model/peliculaModel.php";
 require_once "model/customerModel.php";
+require_once "model/cuentaModel.php";
+require_once "model/customerModel.php";
 class User extends SessionController{
     private $user;
     private $cuenta;
@@ -18,6 +20,8 @@ class User extends SessionController{
     function render(){
         $session = new Session();
         $peliculas = new PeliculaModel();
+        $cuentas = new CuentaModel();
+        $clientes = new CustomerModel();
         $arreglo = [
             "user"=>$this->user,
             "actual"=>$session->getCurrentPage()
@@ -26,6 +30,14 @@ class User extends SessionController{
             case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
                 break;
             case "proximamente": $arreglo["peliculas"] = $peliculas->getAllProximamente();
+                break;
+            case "principal": $arreglo["peliculas"] = $peliculas->getAllCartelera();
+                break;
+            case "datos": 
+                $cuenta_d = $cuentas->get($cuentas->getUsernameByUsuario($session->getCurrentUser()));
+                $cliente_d = $clientes->get($session->getCurrentUser());
+                $arreglo["datos"] = $cliente_d;
+                $arreglo["datos_cuenta"] = $cuenta_d;
                 break;
             case "pelicula_detalle": $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
                 break;
