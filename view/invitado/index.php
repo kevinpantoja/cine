@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo constant("URL")."view/invitado/style.css"?>">
     <link rel="stylesheet" href="<?php echo constant("URL")."view/invitado/footer_header.css"?>">
 </head>
-<body>
+<body class="fondo">
     <span class="boton_mensaje"><?php $this->showMessages(); ?></span>
     <?php include "barra.php";?>
     <?php switch($this->d["actual"]){

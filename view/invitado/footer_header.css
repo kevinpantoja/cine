@@ -79,4 +79,149 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    text-align: center;
 }
+
+.titulo{
+
+    text-align: center;
+    padding-bottom: 30px;
+    padding-right: 50px;
+}
+
+
+.confiteria_individual .confiteria_imagen {
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px var(--gris_claro);
+    width: 200px;
+    height: 200px;
+    
+    margin-top: 20px;
+    margin-left: 20px;
+    
+    
+
+}
+
+.contenedor_confiteria{
+
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-sizing: border-box;
+    
+
+}
+
+
+.confiteria_titulo{
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+
+}
+
+.confiteria_individual{
+
+    
+    display: flex;  
+    justify-content: space-between;
+}
+
+.marco{
+
+    background-color: #8596d5;
+    border-radius: 15px;
+    width: 500px;
+    height: 250px;
+}
+
+.nombre_producto{
+    margin-right: 60px;
+    
+}
+
+.marco_nombre_producto{
+    margin-right: 15px;
+    margin-top: 20px;
+    margin-left: 25px;
+    background-color: rgb(248, 232, 232);
+    border-radius: 15px;
+    width: 1000px;
+    height: 211px;
+}
+
+.marco_titulo_producto{
+
+    background-color: rgb(55, 0, 255);
+    border-radius: 15px;
+    height: 50px;
+    padding-top: 1px;
+    color: white;
+    
+}
+
+.confiteria_info{
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 7px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+
+}
+
+.confiteria_tamano{
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 30px;
+    margin-right: 150px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    
+
+}
+
+.confiteria_precio{
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 90px;
+    margin-right: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    color: #6626e7;
+
+}
+.confiteria_precio_tamano{
+    font-family: 'Inter', sans-serif;
+    margin-top: 43px;
+    margin-right: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    color: #6626e7;
+
+}
+
+.tamano{
+
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    color: #6626e7;
+    border-radius: 15px;
+    border-color: #000000;
+
+}
+
