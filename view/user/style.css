@@ -14,6 +14,7 @@
     --morado_oscuro_transparente: #6626e7bb;
     --gris_claro_transparente: #8d99aebb;
     --rojo: #e63946;
+    --verde: #2a9d8f;
 }
 
 /*PELICULA*/
@@ -296,4 +297,40 @@
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+
+.boton_mensaje{
+    display: flex;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    position: fixed;
+    top: -40px;
+    left: 20px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    z-index: 20;
+    box-shadow: 4px 4px 10px var(--azul_oscuro);
+    transition: 2.5s all;
+}
+.error{
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: .5rem;
+    border-radius: 10px;
+}
+.success{
+    background-color: var(--verde);
+    color: #000000;
+    padding: .5rem;
+    border-radius: 10px;
+}
+.boton_trasladar{
+    transform: translate(0,80px);
+}
+
+.boton_desaparecer{
+    transition: .5s all;
+    transform: translate(-600px,80px);
 }

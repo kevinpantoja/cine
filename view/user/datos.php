@@ -33,7 +33,7 @@
 
             <div class="contenedor__formulario">
                 <h2>Datos</h2>
-                <form class="formulario" action="" method="POST">
+                <form class="formulario" action="<?php echo constant("URL"); ?>user/updateUserData" method="POST">
                     <p class="formulario__input">
                         <label for="name">Nombre</label>
                         <input class="input" type="text" name="name" id="name" value="<?php echo $datos->getNombres(); ?>"autocomplete="off" disabled>
@@ -55,8 +55,8 @@
     <section class="contenedor__modificar">
         <div class="inferior">
             <p class="botones">
-                <input type="text" value="Cancelar" id="Cancelar" onclick="location.reload()" disabled/>
-                <input type="text" id="boton_actualizar" value="Actualizar datos" disabled/>
+                <input type="text" readonly value="Cancelar" id="Cancelar" onclick="location.reload()" disabled/>
+                <input type="text" readonly id="boton_actualizar" value="Actualizar datos" disabled/>
             </p>  
         </div>
     </section>    
@@ -104,6 +104,10 @@
         }
         window.location.reload();
         
+    })
+
+    $boton_actualizar.addEventListener("click",(e)=>{
+        $form.submit();
     })
 </script>
 <script>

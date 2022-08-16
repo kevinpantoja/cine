@@ -124,10 +124,42 @@ header > div{
     padding-right: 130px !important;
     
 }
-.body_compra  input{
+#precios  input{
     width: 30px;
     /* margin-top: 10px; */
     height: 20px;
     color: #000;
     border-radius: 30%;
+}
+
+
+.botones_int{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 40px;
+}
+.botones_int input{
+    background-color: var(--gris);
+    width: 180px;
+    padding: .3rem 0;
+    border-radius: 30px;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+	box-shadow: 3px 2px 3px rgba(0,0,0,.5);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.botones_int input:hover{
+    background-color: var(--negro);
+}
+#boton_continua{
+    background-color: var(--morado);
+    color: var(--blanco);
+}
+#boton_continua:hover{
+    background-color: var(--morado_oscuro);
 }

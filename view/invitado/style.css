@@ -13,6 +13,7 @@
     --gris_claro_transparente: #8d99aebb;
     --rojo: #e63946;
     --morado_oscuro_transparente: #6626e7bb;
+    --verde: #2a9d8f;
 }
 
 /*PELICULA*/
@@ -124,8 +125,6 @@
     display: flex;
     padding: 1rem 2rem;
     border-radius: 10px;
-    background-color: var(--rojo);
-    color: var(--blanco);
     position: fixed;
     top: -40px;
     left: 20px;
@@ -134,6 +133,14 @@
     z-index: 20;
     box-shadow: 4px 4px 10px var(--azul_oscuro);
     transition: 2.5s all;
+}
+.error{
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.success{
+    background-color: var(--verde);
+    color: #000000;
 }
 
 .boton_trasladar{

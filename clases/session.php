@@ -5,6 +5,7 @@ class Session{
     private $currentPage = "actual";
     private $idPelicula = "id_pelciula";
     public $idFuncion = "id_funcion"; 
+    public $boletos = "tickets";
 
     public function __construct()
     {
@@ -33,12 +34,20 @@ class Session{
         $_SESSION[$this->currentPage] = $page;
     }
 
+    public function setTickets($tickes){
+        $_SESSION[$this->boletos] = $tickes;
+    }
+
     public function getCurrentPage(){
         return $_SESSION[$this->currentPage];
     }
 
     public function getCurrentUser(){
         return $_SESSION[$this->sessionName];
+    }
+
+    public function getTickets(){
+        return $_SESSION[$this->boletos];
     }
 
     public function getIdPelicula(){

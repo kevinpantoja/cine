@@ -6,6 +6,7 @@ require_once "model/cuentaModel.php";
 require_once "model/customerModel.php";
 require_once "model/golosinaModel.php";
 require_once "model/funcionModel.php";
+require_once "model/boleto_funcionModel.php";
 class User extends SessionController{
     private $user;
     private $cuenta;
@@ -26,10 +27,12 @@ class User extends SessionController{
         $clientes = new CustomerModel();
         $confiteria = new GolosinaModel();
         $funcion = new FuncionModel();
+        $boletos = new Boleto_funcionModel();
         $arreglo = [
             "user"=>$this->user,
             "actual"=>$session->getCurrentPage()
         ];
+        error_log("User::render -> currentPage: ".$session->getCurrentPage());
         switch($session->getCurrentPage()){
             case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
                 break;
@@ -39,7 +42,14 @@ class User extends SessionController{
                 $arreglo["peliculas"] = $peliculas->getAllCartelera();
                 $arreglo["productos"] = $confiteria->getAll();
                 break;
-            case "dulceria": $arreglo["productos"] = $confiteria->getAll();
+            case "dulceria": 
+                $arreglo["productos"] = $confiteria->getAll();
+                break;
+            case "paso2compra": 
+                $funcion_d = $funcion->get($session->getIdFuncion());
+                $arreglo["funcion"] = $funcion_d;
+                $arreglo["boletos"] = $boletos->getAll_funcion($session->getIdFuncion());
+                $arreglo["pelicula"] = $peliculas->get($funcion_d->getId_pelicula()) ;
                 break;
             case "paso1Compra": 
                 $funcion_d = $funcion->get($session->getIdFuncion());
@@ -83,6 +93,28 @@ class User extends SessionController{
             $session->setIdFuncion($_POST["id_funcion"]);
             $this->barraRedirect(["paso1Compra"]);
         }
+    }
+
+    function validarBoletos(){
+        $session = new Session();
+        $num_a = isset($_POST["adulto"])?$_POST["adulto"]:0;
+        $num_n = isset($_POST["nino"])?$_POST["nino"]:0;
+        $num_am = isset($_POST["adultoMayor"])?$_POST["adultoMayor"]:0;
+        $num_d = isset($_POST["discapacidad"])?$_POST["discapacidad"]:0;
+        if($num_a < 0 || $num_n < 0 || $num_am < 0 || $num_d < 0 || ($num_a + $num_n + $num_am + $num_d) == 0){
+            error_log("User::validarBoletos -> numero de boletos nulos ".($num_a + $num_n + $num_am + $num_d));
+            $session->setCurrentPage("paso1Compra");
+            $this->redirect("user",["error"=> ErrorMessage::ERROR_TICKETS_NUMBER]);
+        }else{
+            $boletos = [];
+            if($num_a > 0) $boletos["adulto"] = $num_a;
+            if($num_n > 0) $boletos["nino"] = $num_n;
+            if($num_am > 0) $boletos["adultomayor"] = $num_am;
+            if($num_d > 0) $boletos["discapacidad"] = $num_d;
+            error_log("User::validarBoletos -> proceso correcto ");
+            $session->setTickets($boletos);
+            $this->barraRedirect(["paso2compra"]);   
+        }   
     }
 
     function updateUserData(){

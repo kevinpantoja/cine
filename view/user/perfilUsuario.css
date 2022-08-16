@@ -110,7 +110,7 @@
 .formulario1__input > input{
     padding: .5rem;
     border-radius: 10px;
-    color: var(--gris_oscuro);
+    color: var(--negro);
     width: 900%;
 }
 
@@ -187,14 +187,14 @@
 .formulario__input > input{
     padding: .5rem;
     border-radius: 10px;
-    color: var(--gris_oscuro);
+    color: var(--negro);
 }
 
 /*INFERIOR*/
 .contenedor__modificar{
     position: absolute;
     width: 800px;
-    height: 200px;
+    height: 100px;
     top: 665px;
     background-color: var(--gris);
     border-radius: 20px;
@@ -216,7 +216,7 @@
 
 .inferior p {
 	position: relative;
-	top: 110px;
+	top: 50px;
     left: 19px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;

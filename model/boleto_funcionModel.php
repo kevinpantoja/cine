@@ -109,6 +109,30 @@ class Boleto_funcionModel extends Model{
         }
     }
 
+    public function getAll_funcion($id_funcion){
+        $items = [];
+        try{
+            $query = $this->prepare("SELECT * FROM BOLETO_FUNCION WHERE ID_FUNCION = :ID_FUNCION");
+            $query->execute([
+                "ID_FUNCION"=>$id_funcion
+            ]);
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                $item = new Boleto_funcionModel();
+                $item->setId($row["id"]);
+                $item->setid_cliente($row["id_cliente"]);
+                $item->setfila($row["fila"]);
+                $item->setcolumna($row["columna"]);
+                $item->setid_funcion($row["id_funcion"]);
+                $item->setprecio($row["precio"]);
+                $item->setfecha_compra($row["fecha_compra"]);
+            }
+            return $items;
+        }catch(PDOException $e){
+            error_log("BOLETO_FUNCIONModel::getAll_cliente_funcion->PDOException ".$e);
+            return null;
+        }
+    }
+
     public function get($id){
         error_log("BOLETO_FUNCIONModel::get -> ".$id);
         try{

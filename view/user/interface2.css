@@ -1,62 +1,81 @@
-td > img{
-    width: 10px;
-    height: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+:root{
+    --azul_oscuro: #224A98;
+    --azul_claro: #5084E6;
+    --gris_claro: #edf2f4;
+    --gris: #8d99ae;
+    --blanco: #ffffff;
+    --morado: #973fda;
+    --morado_oscuro: #6626e7;
+    --negro: #000000;
 }
 html{
     background-color: whitesmoke;
 }
-* {
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
+.body_compra{
+    display: block;
+    font-family: 'Inter', sans-serif;
 }
- h1 {
+.body_compra h1 {
     font-weight: 300px;
     font-size: 50px;
-    color: darkblue; }
- header{
+    color: var(--azul_oscuro); }
+.bod1_compra header{
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
  }
- header >div> img{
+header >div> img{
     margin-left: 200px;
     margin-right: 200px;
     padding: 0;
     max-width: 120px;
  }
- header > div{
+header > div{
     display:flex;
     flex-direction: row;
     justify-content: center; 
     align-items: center
- }
-#pelicula{
-    position:absolute;
-    left: 260px;
-    background-color: rgb(109, 109, 255);
+}
+.body_compra > div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 1.5rem;
+}
+.body_compra #pelicula{
+    background-color: var(--azul_claro);
     padding:20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 210px;
+    width: 350px;
     border: 3.2px solid #000;
     border-radius: 5%;
 }
-#BatImg{
+.body_compra #BatImg{
     border-radius: 5%;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 300px;
+    width: 250px;
+    
 }
-pre{
-    width: 20px;
-    margin-bottom: -30px;
-    padding-left: 20px;
+.body_compra pre{
+    width: 10px;
+    /* margin-bottom: -30px;
+    padding-left: 20px; */
 }
-details{
-    padding-bottom: 20px;
+.body_compra details{
+    padding-bottom: 10px;
 }
-#entradas{
-    position:absolute;
+.body_compra #entradas{
     left: 600px;
-    background-color: rgb(109, 109, 255);
+    background-color: var(--azul_claro);
     padding:20px;
     padding-top: 0;
     
@@ -66,26 +85,30 @@ details{
     border: 3.2px solid #000;
     border-radius: 2%;
 }
-#imgentradas{
-    width: 50px;
+.body_compra #imgentradas{
+    width: 70px;
     margin-left: 30px;
     margin-right: 20px;
 }
-h2{
+.body_compra h2{
     font-size:30px;
 }
-#titleEntradas{
-    background-color: darkblue;
-    margin-left: -22px;
+.body_compra #titleEntradas{
+    background-color: var(--azul_oscuro);
     border: 3.2px solid #000;
     border-radius: 2%;
-    width: 106%;
+    width: 100%;
+    margin-bottom: 2rem;
     display:flex;
+    color: var(--blanco);
     flex-direction: row;
     align-items: center
 }
 #precios > div{
     display:flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 #precios > div> p{
     margin-left: 10px;
@@ -93,7 +116,7 @@ h2{
     width: 100px;
     font-size: 20px;
 } 
-.persona{
+.body_compra .persona{
     width: 130px;
     padding-left: 100px;
     padding-right: 100px;
@@ -101,40 +124,42 @@ h2{
     padding-right: 130px !important;
     
 }
-input, td{
-    color: #000;
-}
-.example{
+#precios  input{
     width: 30px;
-}
-.colores, .colores > div{
-    display:flex;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center
-}
-.colores > div{
-    padding-right: 80px;
-}
-.colores > div > img{
-    padding-right: 10px;
+    /* margin-top: 10px; */
+    height: 20px;
+    color: #000;
+    border-radius: 30%;
 }
 
-#volver{
-    background-color: gray;
-    position:absolute;
-    right:500px;
-    width: 120px;
-    height: 30px;
-    bottom: 80px;
-    border-radius: 10%;
+
+.botones_int{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 40px;
 }
-#continuar{
-    background-color: purple;
-    position:absolute;
-    right:300px;
-    width: 120px;
-    height: 30px;
-    bottom: 80px;
-    border-radius: 10%;
+.botones_int input{
+    background-color: var(--gris);
+    width: 180px;
+    padding: .3rem 0;
+    border-radius: 30px;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+	box-shadow: 3px 2px 3px rgba(0,0,0,.5);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.botones_int input:hover{
+    background-color: var(--negro);
+}
+#boton_continua{
+    background-color: var(--morado);
+    color: var(--blanco);
+}
+#boton_continua:hover{
+    background-color: var(--morado_oscuro);
 }
