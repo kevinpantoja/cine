@@ -36,6 +36,8 @@
         <input type="radio" name="modo" autocomplete="off" value="estreno" checked>
         <label for="modo2">normal</label>
         <input type="radio" name="modo" autocomplete="off" value="normal">
+        <label for="modo2">proximamente</label>
+        <input type="radio" name="modo" autocomplete="off" value="proximamente">
     </p>
     <p>
         <label for="foto">Imagen</label>

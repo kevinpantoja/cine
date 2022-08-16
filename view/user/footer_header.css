@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
 :root{
     --azul_oscuro: #224A98;
     --azul_claro: #5084E6;
@@ -10,6 +11,7 @@
     --blanco: #ffffff;
     --morado: #973fda;
     --morado_oscuro: #6626e7;
+    --negro: #000000;
 }
 .cabecera{
     display: flex;
@@ -79,4 +81,126 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    text-align: center;
 }
+
+
+
+
+
+
+
+
+.contenedor_general_confiteria{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contenedor_confiteria{
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+.titulo_1{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    margin: 0;
+    font-size: 3rem;
+    color: var(--azul_oscuro);
+    max-width: 900px;
+}
+.marco{
+    background-color: var(--azul_claro);
+    border-radius: 15px;
+    height: 250px;
+    width: 500px;
+    border: 2px solid var(--negro);
+    padding: 15px;
+}
+.confiteria_individual{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+.confiteria_individual .contenedor_imagen {
+    border-radius: 15px;
+    width: 200px;
+    height: 218px;
+}
+.confiteria_individual .confiteria_imagen {
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.marco_nombre_producto{
+    background-color: var(--gris_claro);
+    border: 2px solid var(--negro);
+    border-radius: 15px;
+    height: 218px;
+    width: 270px;
+    font-family: 'Inter', sans-serif;
+}
+.marco_titulo_producto{
+    background-color: var(--azul_oscuro);
+    border: 2px solid var(--negro);
+    border-radius: 12px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+
+
+.confiteria_detalles{
+    padding: .8rem 1rem;
+}
+.confiteria_info{
+    text-align: center;
+    font-size: 1rem;
+}
+.confiteria_tamano{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+.tamano{
+    text-align: center;
+    font-weight: bold;
+    font-size: .9rem;
+    color: var(--azul_oscuro);
+    border-radius: 15px;
+    border-color: var(--negro);
+}
+
+.confiteria_precio{
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confiteria_precio p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    color: var(--azul_oscuro);
+    margin-right: 4px;
+}
+.cantidad_subtotal{
+    width: 4rem;
+    padding: .3rem .3rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+

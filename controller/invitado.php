@@ -2,6 +2,8 @@
 
 require_once "model/peliculaModel.php";
 require_once "model/customerModel.php";
+require_once "model/golosinaModel.php";
+require_once "model/funcionModel.php";
 class Invitado extends Controller{
 /*     private $user;
     private $cuenta;
@@ -20,6 +22,8 @@ class Invitado extends Controller{
     function render(){
         $session = new Session();
         $peliculas = new PeliculaModel();
+        $confiteria = new GolosinaModel();
+        $funcion = new FuncionModel();
         $arreglo = [];
         if(isset($_SESSION["actual"])){
             $arreglo = [
@@ -35,9 +39,14 @@ class Invitado extends Controller{
                 break;
             case "principal": $arreglo["peliculas"] = $peliculas->getAllCartelera();
                 break;
+            case "dulceria": $arreglo["productos"] = $confiteria->getAll();
+                break;
             case "proximamente": $arreglo["peliculas"] = $peliculas->getAllProximamente();
                 break;
-            case "pelicula_detalle": $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
+            case "pelicula_detalle": 
+                $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
+                $arreglo["funciones"] = $funcion->getAllxFuncion($session->getIdPelicula());
+                $arreglo["fechas"] = $funcion->getAllxFuncionFecha($session->getIdPelicula());
                 break;
         } 
         $this->view->render("invitado/index",$arreglo);

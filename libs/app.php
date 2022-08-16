@@ -4,10 +4,10 @@ require_once "controller/errores.php";
 class App{
     function __construct()
     {
+        error_log("APP::getRuta->no hay controlador especificado".$_GET["url"]);
         $url = isset($_GET["url"]) ? $_GET["url"]: null;
         $url = rtrim($url,"/");//borrar cualquier diagonal que se encuentre al final de la url
         $url = explode("/",$url);//dividir en elementos usando el separado /
-
         if(empty($url[0])){
             error_log("APP::construct->no hay controlador especificado");
             $archivoController = "controller/invitado.php";

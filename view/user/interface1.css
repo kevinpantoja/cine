@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+:root{
+    --azul_oscuro: #224A98;
+    --azul_claro: #5084E6;
+    --gris_claro: #edf2f4;
+    --gris: #8d99ae;
+    --blanco: #ffffff;
+    --morado: #973fda;
+    --morado_oscuro: #6626e7;
+    --negro: #000000;
+}
+html{
+    background-color: whitesmoke;
+}
+.body_compra{
+    display: block;
+    font-family: 'Inter', sans-serif;
+}
+.body_compra h1 {
+    font-weight: 300px;
+    font-size: 50px;
+    color: var(--azul_oscuro); }
+.bod1_compra header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+ }
+header >div> img{
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 0;
+    max-width: 120px;
+ }
+header > div{
+    display:flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center
+}
+.body_compra > div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 1.5rem;
+}
+.body_compra #pelicula{
+    background-color: var(--azul_claro);
+    padding:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 350px;
+    border: 3.2px solid #000;
+    border-radius: 5%;
+}
+.body_compra #BatImg{
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 300px;
+    width: 250px;
+    
+}
+.body_compra pre{
+    width: 10px;
+    /* margin-bottom: -30px;
+    padding-left: 20px; */
+}
+.body_compra details{
+    padding-bottom: 10px;
+}
+.body_compra #entradas{
+    left: 600px;
+    background-color: var(--azul_claro);
+    padding:20px;
+    padding-top: 0;
+    
+    padding-bottom: 5px;
+    width: 600px;
+    height: 425px;
+    border: 3.2px solid #000;
+    border-radius: 2%;
+}
+.body_compra #imgentradas{
+    width: 70px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+.body_compra h2{
+    font-size:30px;
+}
+.body_compra #titleEntradas{
+    background-color: var(--azul_oscuro);
+    border: 3.2px solid #000;
+    border-radius: 2%;
+    width: 100%;
+    margin-bottom: 2rem;
+    display:flex;
+    color: var(--blanco);
+    flex-direction: row;
+    align-items: center
+}
+#precios > div{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+#precios > div> p{
+    margin-left: 10px;
+    padding-right: 80px;
+    width: 100px;
+    font-size: 20px;
+} 
+.body_compra .persona{
+    width: 130px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    padding-right: 130px !important;
+    
+}
+.body_compra  input{
+    width: 30px;
+    /* margin-top: 10px; */
+    height: 20px;
+    color: #000;
+    border-radius: 30%;
+}

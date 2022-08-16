@@ -67,6 +67,45 @@ class FuncionModel extends Model implements IModel{
         }
     }
 
+    public function getAllxFuncion($id){
+        $items = [];
+        try{
+            $query = $this->query("SELECT * FROM FUNCION WHERE id_pelicula = '$id'");
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                $item = new FuncionModel();
+                $item->setId($row["id"]);
+                $item->setId_pelicula($row["id_pelicula"]);
+                $item->setFecha($row["fecha"]);
+                $item->setMinutos_final($row["minutos_final"]);
+                $item->setMinutos_inicio($row["minutos_inicio"]);
+                $item->setFormatos_sala($row["formato_sala"]);
+                $item->setEstado_pelicula($row["estado_pelicula"]);
+                $item->setId_sala($row["id_sala"]);
+                array_push($items,$item);
+            }
+            return $items;
+        }catch(PDOException $e){
+            error_log("FUNCIONModel::getAll->PDOException ".$e);
+            return null;
+        }
+    }
+
+    public function getAllxFuncionFecha($id){
+        $items = [];
+        try{
+            $query = $this->query("SELECT fecha FROM funcion WHERE id_pelicula = '$id' GROUP BY fecha");
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                array_push($items,$row["fecha"]);
+            }
+            return $items;
+        }catch(PDOException $e){
+            error_log("FUNCIONModel::getAll->PDOException ".$e);
+            return null;
+        }
+    }
+
+
+
     public function getAll_pelicula($id_pelicula){
         $items = [];
         try{

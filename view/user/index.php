@@ -29,6 +29,8 @@
             break; 
         case "datos": include_once "datos.php";
             break;              
+        case "paso1Compra": include_once "interface1.php";
+            break;              
         default: include_once "principal.php";
             break;
     } 
@@ -37,5 +39,11 @@
 
     <?php include "footer.php"; ?>
     <script src="https://kit.fontawesome.com/9e7e6d804a.js" crossorigin="anonymous"></script>
+    <script>
+    window.addEventListener("scroll",function(){
+        var header = document.querySelector(".cabecera");
+        header.classList.toggle("fixed",window.scrollY);
+    });
+</script>
 </body>
 </html>

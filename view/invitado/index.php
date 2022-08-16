@@ -41,3 +41,11 @@
     </script>
 </body>
 </html>
+
+
+<script>
+    window.addEventListener("scroll",function(){
+        var header = document.querySelector(".cabecera");
+        header.classList.toggle("fixed",window.scrollY);
+    });
+</script>

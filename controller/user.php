@@ -4,6 +4,8 @@ require_once "model/peliculaModel.php";
 require_once "model/customerModel.php";
 require_once "model/cuentaModel.php";
 require_once "model/customerModel.php";
+require_once "model/golosinaModel.php";
+require_once "model/funcionModel.php";
 class User extends SessionController{
     private $user;
     private $cuenta;
@@ -22,6 +24,8 @@ class User extends SessionController{
         $peliculas = new PeliculaModel();
         $cuentas = new CuentaModel();
         $clientes = new CustomerModel();
+        $confiteria = new GolosinaModel();
+        $funcion = new FuncionModel();
         $arreglo = [
             "user"=>$this->user,
             "actual"=>$session->getCurrentPage()
@@ -33,13 +37,23 @@ class User extends SessionController{
                 break;
             case "principal": $arreglo["peliculas"] = $peliculas->getAllCartelera();
                 break;
+            case "dulceria": $arreglo["productos"] = $confiteria->getAll();
+                break;
+            case "paso1Compra": 
+                $funcion_d = $funcion->get($session->getIdFuncion());
+                $arreglo["funcion"] = $funcion_d;
+                $arreglo["pelicula"] = $peliculas->get($funcion_d->getId_pelicula()) ;
+                break;
             case "datos": 
                 $cuenta_d = $cuentas->get($cuentas->getUsernameByUsuario($session->getCurrentUser()));
                 $cliente_d = $clientes->get($session->getCurrentUser());
                 $arreglo["datos"] = $cliente_d;
                 $arreglo["datos_cuenta"] = $cuenta_d;
                 break;
-            case "pelicula_detalle": $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
+            case "pelicula_detalle": 
+                $arreglo["pelicula"] = $peliculas->get($session->getIdPelicula());
+                $arreglo["funciones"] = $funcion->getAllxFuncion($session->getIdPelicula());
+                $arreglo["fechas"] = $funcion->getAllxFuncionFecha($session->getIdPelicula());
                 break;
         } 
         $this->view->render("user/index",$arreglo);
@@ -59,6 +73,14 @@ class User extends SessionController{
             $session->setIdPelicula($actual[1]);
         }
         $this->redirect("user",[]); //TODO: 
+    }
+
+    function operacionSession($param){
+        $session = new Session();
+        if($param[0] == "idFuncion"){
+            $session->setIdFuncion($_POST["id_funcion"]);
+            $this->barraRedirect(["paso1Compra"]);
+        }
     }
 
     function updateUserData(){

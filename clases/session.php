@@ -4,6 +4,7 @@ class Session{
     private $sessionName = "usuario";
     private $currentPage = "actual";
     private $idPelicula = "id_pelciula";
+    public $idFuncion = "id_funcion"; 
 
     public function __construct()
     {
@@ -24,6 +25,10 @@ class Session{
         $_SESSION[$this->idPelicula] = $idPel;
     }
 
+    public function setIdFuncion($idPel){
+        $_SESSION[$this->idFuncion] = $idPel;
+    }
+
     public function setCurrentPage($page){
         $_SESSION[$this->currentPage] = $page;
     }
@@ -38,6 +43,10 @@ class Session{
 
     public function getIdPelicula(){
         return $_SESSION[$this->idPelicula];
+    }
+
+    public function getIdFuncion(){
+        return $_SESSION[$this->idFuncion];
     }
 
     public function closeSession(){

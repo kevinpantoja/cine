@@ -4,7 +4,7 @@
 
 <div class="body">
     <div class="banner_principal">
-        <img src="public/img/banner_principal.jpg" alt="">
+        <img src="public/img/banner_principal.jpeg" alt="">
     </div>
     <section class="contenedor_cartelera">
         <div class="titulo">Cartelera General</div>
