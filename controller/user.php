@@ -35,7 +35,9 @@ class User extends SessionController{
                 break;
             case "proximamente": $arreglo["peliculas"] = $peliculas->getAllProximamente();
                 break;
-            case "principal": $arreglo["peliculas"] = $peliculas->getAllCartelera();
+            case "principal":
+                $arreglo["peliculas"] = $peliculas->getAllCartelera();
+                $arreglo["productos"] = $confiteria->getAll();
                 break;
             case "dulceria": $arreglo["productos"] = $confiteria->getAll();
                 break;

@@ -175,7 +175,7 @@ class SessionController extends Controller{
     function initialize($cuenta,$user){
         error_log("sessionController::initialize(): user_id: ".$user->getId());
         $this->session->setCurrentUser($user->getId());
-        $this->session->getCurrentPage("");
+        $this->session->setCurrentPage("principal");
         error_log("sessionController::initialize(): session('user'): " . $this->session->getCurrentUser());
         $this->authorizeAccess($cuenta->getRole());
 

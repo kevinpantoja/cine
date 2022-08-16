@@ -37,7 +37,9 @@ class Invitado extends Controller{
         switch($arreglo["actual"]){
             case "peliculas": $arreglo["peliculas"] = $peliculas->getAll();
                 break;
-            case "principal": $arreglo["peliculas"] = $peliculas->getAllCartelera();
+            case "principal":
+                $arreglo["peliculas"] = $peliculas->getAllCartelera();
+                $arreglo["productos"] = $confiteria->getAll();
                 break;
             case "dulceria": $arreglo["productos"] = $confiteria->getAll();
                 break;
