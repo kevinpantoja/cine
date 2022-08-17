@@ -1,6 +1,9 @@
 <?php 
 $pelicula = $this->d["pelicula"];
 $funcion = $this->d["funcion"];
+$cliente = $this->d["cliente"];
+
+
 function hora($numMin){
     $min = $numMin % 60;
     $hora = ($numMin - $min)/60;
@@ -34,7 +37,7 @@ function hora($numMin){
             <div> 
                 <details>
                     <summary> Email</summary>
-                    <p style="padding-left: 20px;"><a href="" style="color:darkblue">cliente2@gmail.com</a></p>
+                    <p style="padding-left: 20px;"><a href="" style="color:darkblue"><?php echo $cliente->getCorreo();?></a></p>
                 </details> 
             </div>
         </div>

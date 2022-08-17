@@ -19,6 +19,7 @@ html{
 .body_compra{
     display: block;
     font-family: 'Inter', sans-serif;
+    padding: 2rem 0;
 }
 .body_compra h1 {
     font-weight: 300px;
@@ -162,4 +163,40 @@ header > div{
 }
 #boton_continua:hover{
     background-color: var(--morado_oscuro);
+}
+
+
+
+
+.colores, .colores > div{
+    display:flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center
+}
+.colores > div{
+    padding-right: 80px;
+}
+.colores > div > img{
+    padding-right: 10px;
+}
+td > img{
+    width: 20px;
+    height: 20px;
+}
+
+input, td{
+    color: #000;
+}
+.example{
+    width: 30px;
+}
+#imgentradas{
+    width: 50px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+#boton_continua:disabled{
+    background-color: var(--negro);
+    cursor: not-allowed;
 }

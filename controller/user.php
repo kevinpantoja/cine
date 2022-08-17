@@ -49,11 +49,14 @@ class User extends SessionController{
                 $funcion_d = $funcion->get($session->getIdFuncion());
                 $arreglo["funcion"] = $funcion_d;
                 $arreglo["boletos"] = $boletos->getAll_funcion($session->getIdFuncion());
+                $arreglo["tickets"] = $session->getTickets();
+                $arreglo["cliente"] = $clientes->get($session->getCurrentUser());
                 $arreglo["pelicula"] = $peliculas->get($funcion_d->getId_pelicula()) ;
                 break;
             case "paso1Compra": 
                 $funcion_d = $funcion->get($session->getIdFuncion());
                 $arreglo["funcion"] = $funcion_d;
+                $arreglo["cliente"] = $clientes->get($session->getCurrentUser());
                 $arreglo["pelicula"] = $peliculas->get($funcion_d->getId_pelicula()) ;
                 break;
             case "datos": 
@@ -93,6 +96,12 @@ class User extends SessionController{
             $session->setIdFuncion($_POST["id_funcion"]);
             $this->barraRedirect(["paso1Compra"]);
         }
+    }
+
+    function completarBoletos(){
+        $session = new Session();
+        $session->setAsientos($_POST["asientos"]);
+        $this->barraRedirect(["paso2compra"]);  
     }
 
     function validarBoletos(){

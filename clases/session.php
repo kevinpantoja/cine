@@ -6,6 +6,7 @@ class Session{
     private $idPelicula = "id_pelciula";
     public $idFuncion = "id_funcion"; 
     public $boletos = "tickets";
+    public $asientos = "asientos";
 
     public function __construct()
     {
@@ -18,6 +19,9 @@ class Session{
         }
     }
 
+    public function setAsientos($asientos){
+        $_SESSION[$this->asientos] = $asientos;
+    }
     public function setCurrentUser($user){
         $_SESSION[$this->sessionName] = $user;       
     }
@@ -56,6 +60,10 @@ class Session{
 
     public function getIdFuncion(){
         return $_SESSION[$this->idFuncion];
+    }
+
+    public function getAsientos(){
+        return $_SESSION[$this->asientos];
     }
 
     public function closeSession(){
